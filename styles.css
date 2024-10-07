@@ -1,0 +1,70 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Убираем прокрутку */
+}
+
+.slider {
+    position: fixed; /* Используем fixed, чтобы слайдер занимал весь экран */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #000; /* Фон слайдера */
+}
+
+.slide-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex; /* Используем flex для центрирования изображения */
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    max-height: 100%; /* Ограничиваем высоту изображения */
+    object-fit: cover; /* Обеспечиваем обрезку изображения */
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 2px solid #007BFF;
+    color: #007BFF;
+    padding: 15px; /* Увеличиваем размер кнопок */
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 24px; /* Увеличиваем шрифт */
+    transition: background-color 0.3s, color 0.3s;
+    z-index: 10; /* Увеличиваем z-index, чтобы кнопки не перекрывались */
+}
+
+button:hover {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+.prev {
+    left: 20px; /* Увеличиваем отступ от края */
+}
+
+.next {
+    right: 20px; /* Увеличиваем отступ от края */
+}
+
+.slide-info {
+    position: absolute;
+    bottom: 20px; /* Устанавливаем информацию о слайде */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px; /* Увеличиваем шрифт */
+    color: #fff; /* Цвет текста */
+    font-weight: bold;
+}
